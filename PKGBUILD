@@ -1,9 +1,9 @@
 pkgname=smartplayctl-git
-pkgver=1.0
+pkgver=18fe8dd
 pkgrel=1
 pkgdesc="Smart wrapper around playerctl that automatically selects the right media player (for PipeWire, MPRIS, Hyprland)"
 arch=('any')
-url="https://github.com/yourusername/smartplayctl"
+url="https://github.com/larsstifi/smartplayctl"
 license=('MIT')
 depends=('playerctl' 'python')
 makedepends=('git')
