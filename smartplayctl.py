@@ -63,7 +63,7 @@ def select_player(args):
     for p, st in player_status.items():
         if st.lower() == "playing":
             return p;
-    
+
     last_player = get_last_player()
 
     if(last_player):
@@ -80,7 +80,7 @@ def main():
     # Let’s mimic playerctl’s basic verbs
     parser.add_argument(
         "command",
-        choices=["play", "pause", "play-pause", "next", "previous", "stop", "status"],
+        choices=["play", "pause", "play-pause", "stop", "next", "previous", "position", "volume", "status", "metadata", "open", "loop", "shuffle"],
         help="playerctl command to execute"
     )
 
@@ -93,12 +93,12 @@ def main():
            "extra_args",
            nargs=argparse.REMAINDER,
            help="Additional args to forward verbatim"
-    ) 
+    )
 
     args = parser.parse_args()
 
     player = select_player(args)
-    
+
     if not player:
         print("No player found", file=sys.stderr)
 
